@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Thyroid Classification System</title>
+    <!-- Template Main CSS File -->
+    <link href="static/css/style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Semi-transparent dark background */
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+            width: 80%;
+            animation: fadeIn 1s ease-in;
+        }
+
+        p {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        #hero h1 {
+            margin: 0 0 10px 0;
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 56px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        #hero h2 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 56px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            /* Center the button */
+            margin-top: 20px;
+            /* Add some space above the button */
+        }
+
+        .button-group button {
+            width: 3cm;
+            padding: 6px;
+            background: #ea6981;
+            color: white;
+            border: none;
+            /* Remove default button border */
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 0 10px;
+            /* Add some space between buttons */
+        }
+
+        .button-group button:hover {
+            background-color: #e43c5c;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero">
+        <div class="hero-container">
+            <div class="container">
+                <h2>Thyroid Classification Result</h2>
+                <p>The Diagnosis result is:</p>
+                <h1><strong>{% if res==0.0 %}
+                        <span style="color: rgb(11, 198, 11);">No thyroid</span>
+                        {% elif res==1.0 %}
+                        <span style="color: red;">Hypothyroid</span>
+                        {% elif res==2.0 %}
+                        <span style="color: red;">Hyperthyroid</span>
+                        {% endif %}
+                    </strong></h1>
+                <div class="button-group">
+                    <button type="button" onclick="window.location.href='/input'">Back</button>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Hero -->
+</body>
+
+</html>

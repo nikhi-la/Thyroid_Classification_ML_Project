@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyroid Detection</title>
+    <link href="static/css/styleinput.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add Your Info</h1><br>
+        <form id="thyroid-form" method="POST" action="/result">
+            <!-- First Row (Age and Gender) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="Age">Age:</label>
+                    <input type="number" step="any" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="Gender">Gender:</label>
+                    <select name="sex" id="sex" required>
+                        <option value="-1" selected>--- Select ---</option>
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Second Row (Query on Hyperthyroid and TSH) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="Query on Hyperthyroid">Query on Hyperthyroid:</label>
+                    <select name="query_hyperthyroid" id="query_hyperthyroid" required>
+                        <option value="-1" selected>--- Select ---</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="TSH">TSH (mIU/L):</label>
+                    <input type="number" step="any" id="tsh" name="tsh" required>
+                </div>
+            </div>
+            <!-- Third Row (T3 and TT4) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="t3">T3 (ng/dL):</label>
+                    <input type="number" step="any" id="t3" name="t3" required>
+                </div>
+                <div class="form-group">
+                    <label for="tt4">TT4 (µg/dL):</label>
+                    <input type="number" step="any" id="tt4" name="tt4" required>
+                </div>
+            </div>
+            <!-- Fourth Row (T4U and FTI) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="t4u">T4U:</label>
+                    <input type="number" step="any" id="t4u" name="t4u" required>
+                </div>
+                <div class="form-group">
+                    <label for="fti">FTI:</label>
+                    <input type="number" step="any" id="fti" name="fti" required>
+                </div>
+            </div>
+
+            <!-- Button Group -->
+            <div class="button-group">
+                <button type="submit">Detect Thyroid Condition</button>
+                <button type="button" onclick="window.location.href='/'">Home</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
