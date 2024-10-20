@@ -18,8 +18,8 @@ def result():
     # Collect and validate the input
     try:
         age = float(request.form.get('age'))
-        sex = float(request.form.get('sex'))
-        query_hyperthyroid = float(request.form.get('query_hyperthyroid'))
+        sex = request.form.get('sex')
+        query_hyperthyroid = request.form.get('query_hyperthyroid')
         tsh = float(request.form.get('tsh'))
         t3 = float(request.form.get('t3'))
         tt4 = float(request.form.get('tt4'))
@@ -32,6 +32,7 @@ def result():
         with open('rf_Grid.pkl', 'rb') as model_file:
             rf = pickle.load(model_file)
         input_features=pandas.DataFrame(input_features, columns=['age', 'sex', 'query_hyperthyroid', 'TSH', 'T3', 'TT4', 'T4U', 'FTI'])
+        #print(input_features)
         prediction = rf.predict(input_features)
         result = prediction[0]
 
